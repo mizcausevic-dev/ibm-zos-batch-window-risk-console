@@ -1,0 +1,70 @@
+{
+  "organization": "Kinetic Gain synthetic mainframe estate",
+  "generatedAt": "2026-06-06T00:00:00.000Z",
+  "lanes": [
+    {
+      "name": "Nightly settlement close",
+      "owner": "Mainframe operations",
+      "businessSystem": "Card settlement",
+      "criticalWindow": "01:00-04:00",
+      "batchCompletionConfidence": 61,
+      "jclDependencyClarity": 58,
+      "restartReadiness": 49,
+      "downstreamSlaCoverage": 55,
+      "reconciliationEvidence": 52,
+      "lateJobCount": 8,
+      "manualRestartSteps": 9,
+      "downstreamExposureUsd": 4200000,
+      "businessCriticality": 94,
+      "nextAction": "Reduce manual restart steps, attach dependency proof, and split settlement restart evidence before the next close."
+    },
+    {
+      "name": "Claims extract handoff",
+      "owner": "Claims platform",
+      "businessSystem": "Claims warehouse",
+      "criticalWindow": "02:30-05:30",
+      "batchCompletionConfidence": 72,
+      "jclDependencyClarity": 69,
+      "restartReadiness": 63,
+      "downstreamSlaCoverage": 67,
+      "reconciliationEvidence": 61,
+      "lateJobCount": 4,
+      "manualRestartSteps": 5,
+      "downstreamExposureUsd": 1500000,
+      "businessCriticality": 78,
+      "nextAction": "Create a restart packet for the extract chain and verify downstream warehouse SLA owners."
+    },
+    {
+      "name": "Regulatory reporting feed",
+      "owner": "Finance controls",
+      "businessSystem": "Regulatory reporting",
+      "criticalWindow": "03:00-06:00",
+      "batchCompletionConfidence": 83,
+      "jclDependencyClarity": 78,
+      "restartReadiness": 74,
+      "downstreamSlaCoverage": 81,
+      "reconciliationEvidence": 79,
+      "lateJobCount": 2,
+      "manualRestartSteps": 3,
+      "downstreamExposureUsd": 980000,
+      "businessCriticality": 87,
+      "nextAction": "Keep evidence attached and pre-clear restart owners before quarter-end reporting."
+    },
+    {
+      "name": "Customer statement print",
+      "owner": "Customer communications",
+      "businessSystem": "Statement generation",
+      "criticalWindow": "22:00-01:00",
+      "batchCompletionConfidence": 88,
+      "jclDependencyClarity": 84,
+      "restartReadiness": 81,
+      "downstreamSlaCoverage": 86,
+      "reconciliationEvidence": 82,
+      "lateJobCount": 1,
+      "manualRestartSteps": 2,
+      "downstreamExposureUsd": 340000,
+      "businessCriticality": 62,
+      "nextAction": "Maintain current monitoring and attach monthly reconciliation samples."
+    }
+  ]
+}
