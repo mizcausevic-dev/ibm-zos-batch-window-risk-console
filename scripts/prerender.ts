@@ -40,7 +40,7 @@ const html = `<!doctype html>
       h1 { margin:18px 0; max-width:900px; font-size:clamp(46px,8vw,100px); line-height:.92; letter-spacing:-.065em; }
       .lede { max-width:740px; color:var(--muted); font-size:clamp(18px,2.4vw,24px); line-height:1.55; }
       .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px; }
-      .metric,.card,.recommendation { border:1px solid rgba(255,255,255,.1); background:rgba(16,28,45,.72); border-radius:20px; }
+      .metric,.card,.recommendation,.proof-card { border:1px solid rgba(255,255,255,.1); background:rgba(16,28,45,.72); border-radius:20px; }
       .metric { padding:20px; }
       .metric strong { display:block; font-size:34px; letter-spacing:-.04em; }
       .metric span { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.12em; }
@@ -55,8 +55,12 @@ const html = `<!doctype html>
       dd { margin:4px 0 0; font-weight:700; }
       .recommendation { margin-top:18px; padding:26px; border-left:4px solid var(--gold); }
       .recommendation strong { color:var(--gold); }
+      .proof { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:18px; }
+      .proof-card { padding:22px; }
+      .proof-card h3 { margin:10px 0; }
+      .proof-card a { color:var(--cyan); text-decoration:none; }
       footer { color:var(--muted); margin-top:32px; font-size:14px; }
-      @media (max-width:820px) { .metrics,.grid { grid-template-columns:1fr; } dl { grid-template-columns:1fr; } }
+      @media (max-width:820px) { .metrics,.grid,.proof { grid-template-columns:1fr; } dl { grid-template-columns:1fr; } }
     </style>
   </head>
   <body>
@@ -75,6 +79,14 @@ const html = `<!doctype html>
       <h2>Batch lanes</h2>
       <section class="grid">${cards}</section>
       <section class="recommendation"><strong>Primary recommendation</strong><p>${batchConsole.primaryRecommendation}</p></section>
+      <section class="proof" aria-label="Product depth and shared pattern">
+        <article class="proof-card"><div class="eyebrow">Product purpose</div><h3>What this product does</h3><p>Turns z/OS batch-window risk, JCL dependency pressure, restart readiness, SLA exposure, and downstream settlement impact into one operating surface for platform, finance, and executive review.</p></article>
+        <article class="proof-card"><div class="eyebrow">Buyer lens</div><h3>Why leaders care</h3><p>Late batch jobs rarely fail as isolated technical events. They create reconciliation misses, reporting delays, customer-impact windows, and avoidable escalation cost.</p></article>
+        <article class="proof-card"><div class="eyebrow">Value architecture</div><h3>How it turns into action</h3><p>The ledger ranks lanes by exposure, names the owner, shows the release window at risk, and gives teams a concrete remediation sequence before the next close or settlement cycle.</p></article>
+        <article class="proof-card"><div class="eyebrow">Technical proof</div><h3>What reviewers can inspect</h3><p>The repo keeps typed scoring, synthetic mainframe fixtures, static rendering, CI checks, and public-safe output together without production job logs, datasets, or credentials.</p></article>
+        <article class="proof-card"><div class="eyebrow">What these repos have in common</div><h3>Platform complexity becomes board-ready operating proof.</h3><p>Each repo names a buyer pain, exposes an evidence model, produces a reusable decision surface, and keeps the demo boundary safe with synthetic data.</p></article>
+        <article class="proof-card"><div class="eyebrow">Interlinks</div><h3>Where this fits</h3><p><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://kineticgain.com/">Kinetic Gain</a> · <a href="https://github.com/mizcausevic-dev/ibm-zos-batch-window-risk-console">GitHub</a></p></article>
+      </section>
       <footer>Kinetic Gain synthetic proof surface. No production JCL, datasets, job logs, credentials, or settlement evidence included.</footer>
     </main>
   </body>
